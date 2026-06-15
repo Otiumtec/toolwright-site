@@ -42,9 +42,10 @@
   .eyebrow b{color:var(--ink); font-weight:600}
   h1{font-size:clamp(29px,7vw,41px); line-height:1.12; letter-spacing:-.01em; font-weight:700; margin-bottom:15px}
   .sub{font-size:17.5px; color:var(--muted); margin-bottom:26px}
-  .proof{font-size:14.5px; background:rgba(255,255,255,.04); border:1px solid var(--line);
+  .proof{display:block; text-decoration:none; color:var(--ink); transition:border-color .15s ease; font-size:14.5px; background:rgba(255,255,255,.04); border:1px solid var(--line);
     border-radius:12px; padding:13px 15px; margin-bottom:26px}
   .proof b{color:var(--ink)} .proof span{color:var(--muted)}
+  .proof:hover{border-color:#3b92c9}
   .cta{display:block; text-align:center; text-decoration:none; background:var(--accent); color:var(--accent-ink);
     font-size:18px; font-weight:700; padding:17px 24px; border-radius:14px; margin-bottom:12px;
     transition:transform .08s ease, filter .15s ease}
@@ -76,7 +77,7 @@
     <h1>I&rsquo;ll redesign your logo. Free.</h1>
     <p class="sub">I&rsquo;m Kyle Knight, a Roanoke developer. I redesign one local logo a week to introduce myself &mdash; no catch, no pitch.</p>
 
-    <div class="proof">Recent local work: <b>Bootlegger K-9</b>, <b>Renaissance Hospitality</b>, and <b>Cara Knight Counseling</b>. <span>All built here in town.</span></div>
+    <a class="proof" href="https://otiumtec.github.io/Plumbline/card/" target="_blank" rel="noopener">Recent local work: <b>Bootlegger K-9</b>, <b>Renaissance Hospitality</b>, and <b>Cara Knight Counseling</b>. <span>All built here in town &middot; see my card &rarr;</span></a>
 
     <a class="cta" href="/logo-questionnaire/">Start my free logo &rarr;</a>
     <div class="cta-note">Takes about 5 minutes &middot; you keep the logo either way</div>
@@ -96,7 +97,8 @@
     <div class="foot">
       <a href="tel:+15402930617">&#9742; 540-293-0617</a><br />
       <a href="mailto:kyle@toolwright.dev">&#9993; kyle@toolwright.dev</a><br />
-      <a href="https://www.linkedin.com/in/kyleknightbizdev/">in &middot; LinkedIn</a>
+      <a href="https://www.linkedin.com/in/kyleknightbizdev/">in &middot; LinkedIn</a><br />
+      <a href="https://otiumtec.github.io/Plumbline/card/" target="_blank" rel="noopener">&#9670; Digital business card</a>
     </div>
     <div class="sig">Toolwright &middot; a product of Plumbline Studio &middot; Est. 2026</div>
   </main>
@@ -192,7 +194,7 @@ function step(s){
     ctx.setTransform(dpr,0,0,dpr,0,0);
     if(state) resizeState(state,cssW,cssH,dpr); else state=makeState(getCount(cssW),cssW,cssH,dpr);
   }
-  function loop(){ if(!running) return; var now=performance.now(); if(now-last>IDLE){running=false;return;} step(state); draw(); raf=requestAnimationFrame(loop); }
+  function loop(){ if(!running) return; step(state); draw(); raf=requestAnimationFrame(loop); }
   function start(){ if(running) return; if(reduce.matches){ if(state) draw(); return;} if(document.hidden) return; running=true; last=performance.now(); raf=requestAnimationFrame(loop); }
   function stop(){ running=false; if(raf) cancelAnimationFrame(raf); raf=0; }
   function wake(){ last=performance.now(); if(!running && !document.hidden && !reduce.matches) start(); }
