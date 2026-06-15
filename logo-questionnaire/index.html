@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0a1222" />
+<title>Your Free Logo — Toolwright</title>
+<meta name="description" content="I redesign one local logo a week, free, to introduce myself. No catch. Roanoke business owners welcome." />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<style>
+  :root{
+    --bg:#0a1222; --line:rgba(120,160,205,.18);
+    --ink:#eaf0f8; --muted:#a6b8cd; --accent:#e8c07a; --accent-ink:#1a1206;
+    --panel:rgba(9,16,30,.60);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    min-height:100svh; background:radial-gradient(120% 120% at 50% 0%, #14223a 0%, var(--bg) 72%);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    padding:34px 20px 48px; overflow-x:hidden;
+  }
+  #bg{position:fixed; inset:0; width:100%; height:100%; z-index:0; display:block; pointer-events:none}
+  .vignette{position:fixed; inset:0; z-index:1; pointer-events:none;
+    background:radial-gradient(78% 68% at 50% 45%, transparent 38%, rgba(5,9,18,.6) 100%)}
+  .card{
+    position:relative; z-index:2; width:100%; max-width:600px;
+    background:var(--panel); border:1px solid var(--line); border-radius:20px;
+    padding:32px 30px 30px;
+    backdrop-filter:blur(10px) saturate(115%); -webkit-backdrop-filter:blur(10px) saturate(115%);
+    box-shadow:0 24px 60px -28px rgba(0,0,0,.75);
+  }
+  .mark{display:block; width:52px; height:52px; border-radius:13px; margin-bottom:16px;
+    filter:drop-shadow(0 4px 16px rgba(59,146,201,.45))}
+  .eyebrow{font-size:12.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin-bottom:22px}
+  .eyebrow b{color:var(--ink); font-weight:600}
+  h1{font-size:clamp(29px,7vw,41px); line-height:1.12; letter-spacing:-.01em; font-weight:700; margin-bottom:15px}
+  .sub{font-size:17.5px; color:var(--muted); margin-bottom:26px}
+  .proof{font-size:14.5px; background:rgba(255,255,255,.04); border:1px solid var(--line);
+    border-radius:12px; padding:13px 15px; margin-bottom:26px}
+  .proof b{color:var(--ink)} .proof span{color:var(--muted)}
+  .cta{display:block; text-align:center; text-decoration:none; background:var(--accent); color:var(--accent-ink);
+    font-size:18px; font-weight:700; padding:17px 24px; border-radius:14px; margin-bottom:12px;
+    transition:transform .08s ease, filter .15s ease}
+  .cta:hover{filter:brightness(1.06)} .cta:active{transform:translateY(1px)}
+  .cta-note{text-align:center; font-size:13px; color:var(--muted); margin-bottom:10px}
+  .alt{display:block; text-align:center; font-size:13.5px; color:#6db2d8; text-decoration:none; margin-bottom:34px}
+  .alt:hover{text-decoration:underline}
+  .section-label{font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; color:#6db2d8; margin:0 0 11px}
+  .fit{font-size:15.5px; margin-bottom:8px}
+  .fit em{color:var(--muted); font-style:normal}
+  .ask{list-style:none; margin:6px 0 32px}
+  .ask li{padding:11px 0 11px 28px; position:relative; border-bottom:1px solid var(--line); font-size:15.5px}
+  .ask li:last-child{border-bottom:0}
+  .ask li::before{content:""; position:absolute; left:3px; top:17px; width:8px; height:8px; background:#3b92c9; transform:rotate(45deg)}
+  hr{border:0; border-top:1px solid var(--line); margin:6px 0 24px}
+  .foot{font-size:13.5px; color:var(--muted); line-height:1.95}
+  .foot a{color:var(--ink); text-decoration:none} .foot a:hover{text-decoration:underline}
+  .sig{margin-top:22px; font-size:12.5px; color:var(--muted); letter-spacing:.04em}
+  @media (prefers-reduced-motion: reduce){ #bg{opacity:.6} }
+</style>
+</head>
+<body>
+  <canvas id="bg"></canvas>
+  <div class="vignette"></div>
+
+  <main class="card">
+    <img class="mark" src="/icon-192.png" alt="Toolwright" width="52" height="52" />
+    <div class="eyebrow"><b>Toolwright</b> &middot; Build it true</div>
+    <h1>Your free logo.</h1>
+    <p class="sub">A few questions to help me see your business the way you do &mdash; and the way your customers should. About 5 minutes; there are no wrong answers.</p>
+    <iframe data-tally-src="https://tally.so/embed/MeGgGE?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1" loading="lazy" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0" title="Your Free Logo — Let's Build It True" style="border:0;width:100%;background:transparent"></iframe>
+    <hr />
+    <div class="sig">Toolwright &middot; a product of Plumbline Studio &middot; Est. 2026</div>
+  </main>
+
+<script>
+/* Particle-life background — faithful vanilla-JS port of tool-maker-app's
+   src/lib/particle-life engine (engine.ts / matrix.ts / palette.ts) and
+   ParticleBackground.tsx. 9 types, real interaction matrix, cyan glow type,
+   spatial-grid physics, pointer-drag force points, battery-aware. */
+(function(){
+  var canvas = document.getElementById('bg');
+  var ctx = canvas.getContext('2d', { alpha: true });
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  var COLORS = ["#475569","#1e3a5f","#3b92c9","#134e4a","#c9b88a","#b86b5e","#4a7c64","#7a4a8a","#5eb8c4"];
+  var DIST   = [0.13,0.13,0.13,0.13,0.045,0.13,0.13,0.13,0.045];
+  var MATRIX = [
+    [0.15, 0.50,-0.30, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
+    [-0.30,0.15, 0.50, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
+    [0.50,-0.30, 0.15, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00],
+    [0.10, 0.10, 0.10, 0.05, 0.00, 0.10, 0.10, 0.10,-0.20],
+    [0.00, 0.00, 0.00,-0.15,-0.20, 0.00, 0.00, 0.00, 0.00],
+    [0.00, 0.00, 0.00, 0.00, 0.00, 0.15, 0.50,-0.30, 0.00],
+    [0.00, 0.00, 0.00, 0.00, 0.00,-0.30, 0.15, 0.50, 0.00],
+    [0.00, 0.00, 0.00, 0.00, 0.00, 0.50,-0.30, 0.15, 0.00],
+    [0.00, 0.00, 0.00, 0.35, 0.00, 0.00, 0.00, 0.00,-0.15]
+  ];
+  var R_MAX=80, R_CLOSE=0.2*R_MAX, FRICTION=0.80, FORCE_SCALE=0.06;
+  var R_MAX_SQ=R_MAX*R_MAX, BETA=R_CLOSE/R_MAX, ONE_MINUS_BETA=1-BETA, CELL=R_MAX, GLOW=2;
+  var TOUCH_R=200, TOUCH_R_SQ=TOUCH_R*TOUCH_R, TOUCH_SCALE=0.4;
+  var TOUCH_STRENGTH=[-0.4,-0.4,1.2,-0.3,0.6,-0.4,-0.4,-0.4,1.0];
+  var DESKTOP=4000, MOBILE=1500, BP=768, IDLE=60000;
+
+  var state=null, raf=0, running=false, last=performance.now();
+
+  function pickType(){ var r=Math.random(), acc=0; for(var i=0;i<DIST.length;i++){acc+=DIST[i]; if(r<acc) return i;} return DIST.length-1; }
+  function getCount(w){ return w<BP?MOBILE:DESKTOP; }
+
+  function makeState(count,w,h,dpr){
+    var ps=new Array(count);
+    for(var i=0;i<count;i++){ ps[i]={x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-0.5)*0.2,vy:(Math.random()-0.5)*0.2,type:pickType()}; }
+    ps.sort(function(a,b){return a.type-b.type;});
+    return {particles:ps,width:w,height:h,dpr:dpr,forcePoints:new Map()};
+  }
+  function resizeState(s,w,h,dpr){
+    for(var i=0;i<s.particles.length;i++){var p=s.particles[i]; p.x=((p.x/s.width)*w+w)%w; p.y=((p.y/s.height)*h+h)%h;}
+    s.width=w;s.height=h;s.dpr=dpr;
+  }
+  function forceFn(u,a){ if(u<BETA) return u/BETA-1; if(u<1){var t=(u-BETA)/ONE_MINUS_BETA; return a*(1-Math.abs(2*t-1));} return 0; }
+
+function step(s){
+    var ps=s.particles, w=s.width, h=s.height, halfW=w*0.5, halfH=h*0.5, n=ps.length, i, j, k;
+    var cols=Math.max(1,Math.ceil(w/CELL)), rows=Math.max(1,Math.ceil(h/CELL));
+    var cells=new Array(cols*rows); for(i=0;i<cells.length;i++) cells[i]=[];
+    for(i=0;i<n;i++){var p=ps[i]; var cx=Math.floor(p.x/CELL),cy=Math.floor(p.y/CELL); if(cx<0)cx=0;else if(cx>=cols)cx=cols-1; if(cy<0)cy=0;else if(cy>=rows)cy=rows-1; cells[cy*cols+cx].push(i);}
+    for(i=0;i<n;i++){
+      var pi=ps[i], row=MATRIX[pi.type], fx=0, fy=0;
+      var cx2=Math.floor(pi.x/CELL),cy2=Math.floor(pi.y/CELL); if(cx2<0)cx2=0;else if(cx2>=cols)cx2=cols-1; if(cy2<0)cy2=0;else if(cy2>=rows)cy2=rows-1;
+      for(var oy=-1;oy<=1;oy++){ var ncy=((cy2+oy)%rows+rows)%rows;
+        for(var ox=-1;ox<=1;ox++){ var ncx=((cx2+ox)%cols+cols)%cols; var list=cells[ncy*cols+ncx];
+          for(k=0;k<list.length;k++){ j=list[k]; if(i===j) continue; var pj=ps[j];
+            var dx=pj.x-pi.x, dy=pj.y-pi.y;
+            if(dx>halfW)dx-=w; else if(dx<-halfW)dx+=w;
+            if(dy>halfH)dy-=h; else if(dy<-halfH)dy+=h;
+            var r2=dx*dx+dy*dy; if(r2>R_MAX_SQ||r2===0) continue;
+            var r=Math.sqrt(r2); var f=forceFn(r/R_MAX,row[pj.type]); var inv=1/r;
+            fx+=dx*inv*f; fy+=dy*inv*f;
+          }
+        }
+      }
+      pi.vx=(pi.vx+fx*FORCE_SCALE)*FRICTION; pi.vy=(pi.vy+fy*FORCE_SCALE)*FRICTION;
+    }
+    if(s.forcePoints.size>0){ s.forcePoints.forEach(function(fp){ for(var i2=0;i2<n;i2++){var p=ps[i2]; var dx=p.x-fp.x,dy=p.y-fp.y; var r2=dx*dx+dy*dy; if(r2>TOUCH_R_SQ||r2<1) continue; var r=Math.sqrt(r2); var factor=1-r/TOUCH_R; var strength=TOUCH_STRENGTH[p.type]*factor*TOUCH_SCALE; var inv=1/r; p.vx-=dx*inv*strength; p.vy-=dy*inv*strength; } }); }
+    for(i=0;i<n;i++){var p2=ps[i]; p2.x+=p2.vx; p2.y+=p2.vy; if(p2.x<0)p2.x+=w;else if(p2.x>=w)p2.x-=w; if(p2.y<0)p2.y+=h;else if(p2.y>=h)p2.y-=h;}
+  }
+
+  function draw(){
+    var ps=state.particles, w=state.width, h=state.height, n=ps.length, R=2.0, TWO_PI=Math.PI*2, i;
+    ctx.clearRect(0,0,w,h);
+    ctx.globalCompositeOperation="source-over"; ctx.globalAlpha=0.45; var cur=-1;
+    for(i=0;i<n;i++){var p=ps[i]; if(p.type===GLOW) continue; if(p.type!==cur){ctx.fillStyle=COLORS[p.type]; cur=p.type;} ctx.beginPath(); ctx.arc(p.x,p.y,R,0,TWO_PI); ctx.fill();}
+    ctx.globalCompositeOperation="lighter"; ctx.fillStyle=COLORS[GLOW]; ctx.globalAlpha=0.18; var halo=R*3.5;
+    for(i=0;i<n;i++){var pg=ps[i]; if(pg.type!==GLOW) continue; ctx.beginPath(); ctx.arc(pg.x,pg.y,halo,0,TWO_PI); ctx.fill();}
+    ctx.globalAlpha=0.85;
+    for(i=0;i<n;i++){var pc=ps[i]; if(pc.type!==GLOW) continue; ctx.beginPath(); ctx.arc(pc.x,pc.y,R,0,TWO_PI); ctx.fill();}
+    ctx.globalCompositeOperation="source-over"; ctx.globalAlpha=1;
+  }
+
+  function applySize(){
+    var dpr=Math.min(window.devicePixelRatio||1,2), cssW=window.innerWidth, cssH=window.innerHeight;
+    canvas.width=Math.floor(cssW*dpr); canvas.height=Math.floor(cssH*dpr);
+    canvas.style.width=cssW+'px'; canvas.style.height=cssH+'px';
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    if(state) resizeState(state,cssW,cssH,dpr); else state=makeState(getCount(cssW),cssW,cssH,dpr);
+  }
+  function loop(){ if(!running) return; var now=performance.now(); if(now-last>IDLE){running=false;return;} step(state); draw(); raf=requestAnimationFrame(loop); }
+  function start(){ if(running) return; if(reduce.matches){ if(state) draw(); return;} if(document.hidden) return; running=true; last=performance.now(); raf=requestAnimationFrame(loop); }
+  function stop(){ running=false; if(raf) cancelAnimationFrame(raf); raf=0; }
+  function wake(){ last=performance.now(); if(!running && !document.hidden && !reduce.matches) start(); }
+
+  function onResize(){ applySize(); var target=state?getCount(state.width):0; if(state && state.particles.length!==target){ state=makeState(target,state.width,state.height,state.dpr); } }
+  function onVis(){ if(document.hidden) stop(); else { last=performance.now(); start(); } }
+  function onDown(e){ if(state) state.forcePoints.set(e.pointerId,{x:e.clientX,y:e.clientY}); wake(); }
+  function onMove(e){ if(state && e.buttons!==0) state.forcePoints.set(e.pointerId,{x:e.clientX,y:e.clientY}); wake(); }
+  function onUp(e){ if(state) state.forcePoints.delete(e.pointerId); }
+  function onMotion(){ if(reduce.matches){ stop(); if(state) draw(); } else start(); }
+
+  applySize(); if(state) draw(); start();
+  window.addEventListener('resize', onResize);
+  document.addEventListener('visibilitychange', onVis);
+  window.addEventListener('pointerdown', onDown, {passive:true});
+  window.addEventListener('pointermove', onMove, {passive:true});
+  window.addEventListener('pointerup', onUp, {passive:true});
+window.addEventListener('pointercancel', onUp, {passive:true});
+  window.addEventListener('scroll', wake, {passive:true});
+  window.addEventListener('keydown', wake);
+  if(reduce.addEventListener) reduce.addEventListener('change', onMotion); else reduce.addListener(onMotion);
+})();
+</script>
+<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(null==d.querySelector('script[src="'+w+'"]')){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s)}</script>
+</body>
+</html>
