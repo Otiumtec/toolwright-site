@@ -171,7 +171,7 @@ function step(s){
     ctx.setTransform(dpr,0,0,dpr,0,0);
     if(state) resizeState(state,cssW,cssH,dpr); else state=makeState(getCount(cssW),cssW,cssH,dpr);
   }
-  function loop(){ if(!running) return; var now=performance.now(); if(now-last>IDLE){running=false;return;} step(state); draw(); raf=requestAnimationFrame(loop); }
+  function loop(){ if(!running) return; step(state); draw(); raf=requestAnimationFrame(loop); }
   function start(){ if(running) return; if(reduce.matches){ if(state) draw(); return;} if(document.hidden) return; running=true; last=performance.now(); raf=requestAnimationFrame(loop); }
   function stop(){ running=false; if(raf) cancelAnimationFrame(raf); raf=0; }
   function wake(){ last=performance.now(); if(!running && !document.hidden && !reduce.matches) start(); }
