@@ -49,7 +49,9 @@
     font-size:18px; font-weight:700; padding:17px 24px; border-radius:14px; margin-bottom:12px;
     transition:transform .08s ease, filter .15s ease}
   .cta:hover{filter:brightness(1.06)} .cta:active{transform:translateY(1px)}
-  .cta-note{text-align:center; font-size:13px; color:var(--muted); margin-bottom:34px}
+  .cta-note{text-align:center; font-size:13px; color:var(--muted); margin-bottom:10px}
+  .alt{display:block; text-align:center; font-size:13.5px; color:#6db2d8; text-decoration:none; margin-bottom:34px}
+  .alt:hover{text-decoration:underline}
   .section-label{font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; color:#6db2d8; margin:0 0 11px}
   .fit{font-size:15.5px; margin-bottom:8px}
   .fit em{color:var(--muted); font-style:normal}
@@ -76,8 +78,9 @@
 
     <div class="proof">Recent local work: <b>Bootlegger K-9</b>, <b>Renaissance Hospitality</b>, and <b>Cara Knight Counseling</b>. <span>All built here in town.</span></div>
 
-    <a class="cta" href="https://cal.com/toolwright">Get my free logo &rarr;</a>
-    <div class="cta-note">30 minutes &middot; no pitch &middot; you keep the logo either way</div>
+    <a class="cta" href="https://tally.so/r/MeGgGE">Start my free logo &rarr;</a>
+    <div class="cta-note">Takes about 5 minutes &middot; you keep the logo either way</div>
+    <a class="alt" href="https://cal.com/toolwright">Prefer to just talk first? Book a 30-min call &rarr;</a>
 
     <p class="section-label">Who this is for</p>
     <p class="fit">This is for people building something that should exist &mdash; work that leaves someone better off. <em>If you&rsquo;re hunting for the cheapest possible vendor, we&rsquo;re honestly not your shop. If you&rsquo;re doing real work and want it to show up well, let&rsquo;s talk.</em></p>
@@ -207,7 +210,7 @@ function step(s){
   window.addEventListener('pointerdown', onDown, {passive:true});
   window.addEventListener('pointermove', onMove, {passive:true});
   window.addEventListener('pointerup', onUp, {passive:true});
-  window.addEventListener('pointercancel', onUp, {passive:true});
+window.addEventListener('pointercancel', onUp, {passive:true});
   window.addEventListener('scroll', wake, {passive:true});
   window.addEventListener('keydown', wake);
   if(reduce.addEventListener) reduce.addEventListener('change', onMotion); else reduce.addListener(onMotion);
